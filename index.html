@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Purim Seuda 2026 🎉</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #fdf6ec;
+      color: #2d2d2d;
+      padding: 24px 16px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    header h1 {
+      font-size: 28px;
+      color: #7b2d8b;
+      margin-bottom: 6px;
+    }
+
+    header p {
+      color: #888;
+      font-size: 14px;
+    }
+
+    .location-box {
+      background: #fff;
+      border: 1px solid #e8d5f5;
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-bottom: 28px;
+      text-align: center;
+    }
+
+    .location-box .label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #aaa;
+      margin-bottom: 6px;
+    }
+
+    .location-box .address {
+      font-size: 18px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .location-box .mamad {
+      font-size: 13px;
+      color: #7b2d8b;
+      margin-top: 4px;
+    }
+
+    /* Tabs */
+    .tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .tab {
+      flex: 1;
+      text-align: center;
+      padding: 10px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      border: 2px solid transparent;
+      background: #fff;
+      color: #888;
+      transition: all 0.15s;
+    }
+
+    .tab.active {
+      background: #7b2d8b;
+      color: #fff;
+    }
+
+    .panel { display: none; }
+    .panel.active { display: block; }
+
+    /* Section headers */
+    .section-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #aaa;
+      margin: 20px 0 10px;
+      padding-left: 4px;
+    }
+
+    /* Guest cards */
+    .guest {
+      background: #fff;
+      border-radius: 10px;
+      padding: 12px 16px;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border: 1px solid #f0e6f8;
+    }
+
+    .guest .name {
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    .guest .note {
+      font-size: 12px;
+      color: #999;
+      margin-top: 2px;
+    }
+
+    .badge {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+
+    .badge.in { background: #e8f5e9; color: #2e7d32; }
+    .badge.maybe { background: #fff8e1; color: #f57f17; }
+    .badge.out { background: #fce4ec; color: #c62828; }
+    .badge.dropby { background: #e3f2fd; color: #1565c0; }
+
+    /* Potluck */
+    .food-item {
+      background: #fff;
+      border-radius: 10px;
+      padding: 12px 16px;
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border: 1px solid #f0e6f8;
+      gap: 12px;
+    }
+
+    .food-item .item-name {
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .food-item .item-note {
+      font-size: 12px;
+      color: #999;
+      margin-top: 2px;
+    }
+
+    .food-item .who {
+      font-size: 13px;
+      color: #7b2d8b;
+      font-weight: 600;
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .gap-item {
+      background: #fff8f8;
+      border: 1px dashed #ffcdd2;
+      border-radius: 10px;
+      padding: 12px 16px;
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .gap-item .item-name {
+      font-weight: 600;
+      font-size: 14px;
+      color: #c62828;
+    }
+
+    .gap-item .unassigned {
+      font-size: 12px;
+      color: #ef9a9a;
+      font-weight: 600;
+    }
+
+    .summary {
+      background: #f3e5f5;
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-bottom: 24px;
+      display: flex;
+      justify-content: space-around;
+      text-align: center;
+    }
+
+    .summary .num {
+      font-size: 26px;
+      font-weight: 700;
+      color: #7b2d8b;
+    }
+
+    .summary .lbl {
+      font-size: 11px;
+      color: #888;
+      margin-top: 2px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🎊 Purim Seuda 2026</h1>
+    <p>Wednesday, March 4</p>
+  </header>
+
+  <div class="location-box">
+    <div class="label">Location</div>
+    <div class="address">Rachel's — 66 Hapalmach, Apt 3</div>
+    <div class="mamad">✓ Mamad included</div>
+  </div>
+
+  <div class="tabs">
+    <div class="tab active" onclick="showTab('guests', this)">👥 Guests</div>
+    <div class="tab" onclick="showTab('food', this)">🍽️ Potluck</div>
+  </div>
+
+  <!-- GUESTS PANEL -->
+  <div class="panel active" id="guests">
+
+    <div class="summary">
+      <div><div class="num">13</div><div class="lbl">Confirmed</div></div>
+      <div><div class="num">4</div><div class="lbl">Drop-bys</div></div>
+      <div><div class="num">4</div><div class="lbl">Maybe</div></div>
+    </div>
+
+    <div class="section-label">✅ Confirmed</div>
+
+    <div class="guest">
+      <div><div class="name">Allison</div><div class="note">Host</div></div>
+      <span class="badge in">IN</span>
+    </div>
+    <div class="guest">
+      <div><div class="name">Rachel & Izzy</div><div class="note">Co-hosts · 1 year old 👶</div></div>
+      <span class="badge in">IN</span>
+    </div>
+    <div class="guest">
+      <div><div class="name">Avital</div></div>
+      <span class="badge in">IN</span>
+    </div>
+    <div class="guest">
+      <div><div class="name">Talia</div></div>
+      <span class="badge in">IN</span>
+    </div>
+    <div class="guest">
+      <div><div class="name">Chaim</div></div>
+      <span class="badge in">IN</span>
+    </div>
+    <div class="guest">
+      <div><div class="name">Chana</div></div>
+      <span class="badge in">IN</span>
+    </div>
+    <div class="guest">
+      <div><div class="name">Atara & David</div><div class="note">1 year old 👶</div></div>
+      <span class="badge in">IN</span>
+    </div>
+    <div class="guest">
+      <div><div class="name">Zahava</div></div>
+      <span class="badge in">IN</span>
+    </div>
+    <div class="guest">
+      <div><div class="name">Lauren</div></div>
+      <span class="badge in">IN</span>
+    </div>
+    <div class="guest">
+      <div><div class="name">Ilana</div></div>
+      <span class="badge in">IN</span>
+    </div>
+    <div class="guest">
+      <div><div class="name">Serena</div></div>
+      <span class="badge in">IN</span>
+    </div>
+
+    <div class="section-label">🕐 Drop-bys</div>
+
+    <div class="guest">
+      <div><div class="name">Yaelle</div><div class="note">For a few hours</div></div>
+      <span class="badge dropby">DROP-BY</span>
+    </div>
+    <div class="guest">
+      <div><div class="name">Leeal</div><div class="note">For a few hours</div></div>
+      <span class="badge dropby">DROP-BY</span>
+    </div>
+    <div class="guest">
+      <div><div class="name">Nili + Dovie</div><div class="note">Coming on the later side</div></div>
+      <span class="badge dropby">DROP-BY</span>
+    </div>
+
+    <div class="section-label">🤔 Maybe</div>
+
+    <div class="guest">
+      <div><div class="name">Michal, Aryeh & co</div></div>
+      <span class="badge maybe">MAYBE</span>
+    </div>
+    <div class="guest">
+      <div><div class="name">Liora & Shimmy</div><div class="note">1 year old 👶</div></div>
+      <span class="badge maybe">MAYBE</span>
+    </div>
+    <div class="guest">
+      <div><div class="name">David (Rachel & Izzy's friend)</div></div>
+      <span class="badge maybe">MAYBE</span>
+    </div>
+    <div class="guest">
+      <div><div class="name">Debby</div></div>
+      <span class="badge maybe">MAYBE</span>
+    </div>
+
+    <div class="section-label">❌ Out</div>
+
+    <div class="guest">
+      <div><div class="name">Ruthie</div></div>
+      <span class="badge out">OUT</span>
+    </div>
+    <div class="guest">
+      <div><div class="name">Adina & Joel</div></div>
+      <span class="badge out">OUT</span>
+    </div>
+
+  </div>
+
+  <!-- FOOD PANEL -->
+  <div class="panel" id="food">
+
+    <div class="section-label">🥩 Mains</div>
+
+    <div class="food-item">
+      <div><div class="item-name">Brisket x2</div></div>
+      <div class="who">Allison</div>
+    </div>
+    <div class="food-item">
+      <div><div class="item-name">Schnitzel 4 kilo</div></div>
+      <div class="who">Allison</div>
+    </div>
+    <div class="food-item">
+      <div><div class="item-name">Chicken (wings TBD)</div></div>
+      <div class="who">Allison</div>
+    </div>
+    <div class="food-item">
+      <div><div class="item-name">Mini hot dogs</div></div>
+      <div class="who">Rachel & Izzy</div>
+    </div>
+    <div class="food-item">
+      <div><div class="item-name">Chummus basar</div></div>
+      <div class="who">Rachel & Izzy</div>
+    </div>
+    <div class="food-item">
+      <div><div class="item-name">Deli roll</div></div>
+      <div class="who">Rachel & Izzy</div>
+    </div>
+
+    <div class="section-label">🍚 Sides & Salads</div>
+
+    <div class="food-item">
+      <div><div class="item-name">Rice</div><div class="item-note">Check freezer first</div></div>
+      <div class="who">Allison</div>
+    </div>
+    <div class="food-item">
+      <div><div class="item-name">Potatoes</div></div>
+      <div class="who">Allison</div>
+    </div>
+    <div class="food-item">
+      <div><div class="item-name">Veggies platter</div></div>
+      <div class="who">Allison</div>
+    </div>
+    <div class="food-item">
+      <div><div class="item-name">Salad</div></div>
+      <div class="who">Talia</div>
+    </div>
+    <div class="food-item">
+      <div><div class="item-name">Fruit</div></div>
+      <div class="who">Talia</div>
+    </div>
+    <div class="food-item">
+      <div><div class="item-name">Veggie side</div></div>
+      <div class="who">Avital</div>
+    </div>
+    <div class="food-item">
+      <div><div class="item-name">Veggie side</div><div class="item-note">Broccoli and/or cauliflower</div></div>
+      <div class="who">Chaim</div>
+    </div>
+    <div class="food-item">
+      <div><div class="item-name">Salatim / dips</div></div>
+      <div class="who">Chana</div>
+    </div>
+
+    <div class="section-label">🍰 Dessert & Extras</div>
+
+    <div class="food-item">
+      <div><div class="item-name">Sugar cookies</div></div>
+      <div class="who">Rachel & Izzy</div>
+    </div>
+    <div class="food-item">
+      <div><div class="item-name">Challah rolls</div></div>
+      <div class="who">Rachel & Izzy</div>
+    </div>
+    <div class="food-item">
+      <div><div class="item-name">Dessert</div></div>
+      <div class="who">Michal & Aryeh</div>
+    </div>
+
+    <div class="section-label">🍷 Drinks</div>
+
+    <div class="food-item">
+      <div><div class="item-name">Vodka punch</div><div class="item-note">Pink lemonade</div></div>
+      <div class="who">Allison</div>
+    </div>
+    <div class="food-item">
+      <div><div class="item-name">Red wine</div></div>
+      <div class="who">Allison</div>
+    </div>
+    <div class="food-item">
+      <div><div class="item-name">Bottle of wine (Buzz)</div></div>
+      <div class="who">Atara & David</div>
+    </div>
+    <div class="food-item">
+      <div><div class="item-name">Bottle of wine x2</div></div>
+      <div class="who">Zahava</div>
+    </div>
+    <div class="food-item">
+      <div><div class="item-name">Bottle of wine</div></div>
+      <div class="who">Serena</div>
+    </div>
+    <div class="food-item">
+      <div><div class="item-name">Bottle of wine</div></div>
+      <div class="who">Yaelle</div>
+    </div>
+    <div class="food-item">
+      <div><div class="item-name">Hot cups</div></div>
+      <div class="who">Atara</div>
+    </div>
+    <div class="food-item">
+      <div><div class="item-name">Drinks (soda / juice / water)</div></div>
+      <div class="who">Atara & Rachel</div>
+    </div>
+
+    <div class="section-label">🍽️ Supplies</div>
+
+    <div class="food-item">
+      <div><div class="item-name">Cutlery — forks, knives, spoons (30)</div><div class="item-note">Allison picking up from Leeal</div></div>
+      <div class="who">Leeal</div>
+    </div>
+    <div class="food-item">
+      <div><div class="item-name">Plates + cups (60)</div><div class="item-note">Allison picking up from Lauren</div></div>
+      <div class="who">Lauren</div>
+    </div>
+
+    <div class="section-label">⚠️ Gaps</div>
+
+    <div class="gap-item">
+      <div class="item-name">Salad</div>
+      <div class="unassigned">Need someone</div>
+    </div>
+    <div class="gap-item">
+      <div class="item-name">Dessert (backup)</div>
+      <div class="unassigned">Adina & Joel dropped out</div>
+    </div>
+
+  </div>
+
+  <script>
+    function showTab(id, el) {
+      document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      el.classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
